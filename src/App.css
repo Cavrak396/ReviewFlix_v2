@@ -132,6 +132,19 @@ table {
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto";
+  background-color: rgba(20, 20, 20, 1);
+  user-select: none;
+}
+
+button,
+input,
+select {
+  background: none;
+  border: none;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("./assets/fonts/Roboto-Light.woff2") format("woff2"),
@@ -177,7 +190,8 @@ table {
   font-display: swap;
 }
 
-body {
-  font-family: "Roboto";
-  user-select: none;
+.wrap {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
