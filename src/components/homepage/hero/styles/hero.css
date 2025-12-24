@@ -1,0 +1,163 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 30%,
+      rgba(0, 0, 0, 0) 40%
+    ),
+    url("../../../../assets/images/hero/reviewFlix-hero.webp");
+  background-size: cover;
+  background-position: center 15%;
+}
+
+.hero::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.hero__introduction {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: rgba(255, 255, 255, 1);
+  max-width: 600px;
+  z-index: 15;
+}
+
+.hero__introduction-title {
+  font-size: 55px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero__introduction-description {
+  font-size: 19px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.hero__introduction-genre {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 5px;
+}
+
+.hero__introduction-genre-icon {
+  filter: invert(100%);
+  max-width: 30px;
+  max-height: 30px;
+  flex: 1 1 30px;
+}
+
+.hero__introduction-genre-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hero__introduction-genre-item {
+  font-size: 15px;
+  opacity: 0.5;
+}
+
+.hero__introduction-buttons,
+.hero__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.hero__button:hover {
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.hero__button--transparent {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero__button-image {
+  max-width: 15px;
+  max-height: 15px;
+  flex: 1 1 15px;
+  filter: invert(100%);
+}
+
+.hero__button-link {
+  display: block;
+}
+
+@media screen and (max-width: 975px) {
+  .hero__introduction-title {
+    font-size: 45px;
+  }
+
+  .hero__introduction-description {
+    font-size: 17px;
+  }
+
+  .hero__introduction-genre-list {
+    gap: 3px;
+  }
+
+  .hero__introduction-genre-item {
+    font-size: 14px;
+  }
+
+  .hero__introduction-genre-icon {
+    max-width: 25px;
+    max-height: 25px;
+    flex: 1 1 25px;
+  }
+
+  .hero__button {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero__introduction-title {
+    font-size: 30px;
+    margin-bottom: 7px;
+  }
+
+  .hero__introduction-genre-item {
+    font-size: 12px;
+  }
+
+  .hero__introduction-description {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 10px;
+  }
+
+  .hero::after {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .hero__button {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .hero__button-image {
+    max-width: 12px;
+    max-height: 12px;
+    flex: 1 1 12px;
+  }
+}
