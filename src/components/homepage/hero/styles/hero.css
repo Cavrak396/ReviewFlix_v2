@@ -1,6 +1,5 @@
 .hero {
   position: relative;
-  height: 100vh;
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.5) 30%,
@@ -9,6 +8,7 @@
     url("../../../../assets/images/hero/reviewFlix-hero.webp");
   background-size: cover;
   background-position: center 15%;
+  padding: 150px 0 20px 0;
 }
 
 .hero::after {
@@ -18,16 +18,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 
 .hero__introduction {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
+  position: relative;
   color: rgba(255, 255, 255, 1);
   max-width: 600px;
+  margin-bottom: 70px;
   z-index: 15;
 }
 
@@ -102,6 +101,24 @@
   display: block;
 }
 
+.hero__shows {
+  position: relative;
+  z-index: 15;
+}
+
+.hero__shows-list {
+  display: flex;
+  align-items: center;
+  margin: 0 -10px;
+}
+
+.hero__shows-card {
+  margin: 0 10px;
+  max-width: calc(10% - 20px);
+  flex: 1 1 calc(10% - 20px);
+  min-height: 200px;
+}
+
 @media screen and (max-width: 975px) {
   .hero__introduction-title {
     font-size: 45px;
@@ -128,9 +145,18 @@
   .hero__button {
     font-size: 14px;
   }
+
+  .hero__shows-card {
+    max-width: calc(20% - 20px);
+    flex: 1 1 calc(20% - 20px);
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .hero__introduction {
+    margin-bottom: 27px;
+  }
+
   .hero__introduction-title {
     font-size: 30px;
     margin-bottom: 7px;
@@ -159,5 +185,16 @@
     max-width: 12px;
     max-height: 12px;
     flex: 1 1 12px;
+  }
+
+  .hero__shows-list {
+    margin: 0 -15px;
+  }
+
+  .hero__shows-card {
+    margin: 0 5px;
+    max-width: calc(25% - 10px);
+    flex: 1 1 calc(25% - 10px);
+    min-height: 130px;
   }
 }

@@ -2,7 +2,7 @@ export interface Movie {
     id: number;
     name: string;
     genres: string[];
-    image?: {
+    image: {
         medium: string;
         original: string;
     };
@@ -11,6 +11,10 @@ export interface Movie {
 
 export interface MoviesState {
     selectedMovie: Movie | null;
-    loading: boolean;
+    loading: {
+        fetchSingleMovie: boolean;
+        fetchShows: boolean;
+
+    };
     error: string | null;
 }
