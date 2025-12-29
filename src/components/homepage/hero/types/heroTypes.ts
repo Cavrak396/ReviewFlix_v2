@@ -24,3 +24,14 @@ export interface MovieButtonProps {
     item: MovieButtons;
     movie: MovieType | null;
 }
+
+export interface ScoredShow {
+    name: string;
+    genres: string[];
+    image: {
+        original: string;
+    }
+}
+export interface ScoredShowProps {
+    movies: ScoredShow[];
+}

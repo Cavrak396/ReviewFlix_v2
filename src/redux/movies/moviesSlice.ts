@@ -1,10 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getSingleShow } from "../../services/movies/movies";
+import { getSingleShow, getShows } from "../../services/movies/movies";
 import type { Movie, MoviesState } from "../types/moviesTypes";
 
 const initialState: MoviesState = {
     selectedMovie: null,
-    loading: false,
+    loading: {
+        fetchSingleMovie: false,
+        fetchShows: false,
+    },
     error: null,
 };
 
@@ -23,6 +26,23 @@ export const fetchSingleMovie = createAsyncThunk<
     }
 );
 
+export const fetchShows = createAsyncThunk<
+    Movie[],
+    string,
+    { rejectValue: string }
+>(
+    "movies/fetchShows",
+    async (query, thunkAPI) => {
+        try {
+            const data = await getShows(query);
+
+            return data.map((item: { show: Movie }) => item.show);
+        } catch {
+            return thunkAPI.rejectWithValue("Shows not found");
+        }
+    }
+);
+
 const moviesSlice = createSlice({
     name: "movies",
     initialState,
@@ -35,17 +55,29 @@ const moviesSlice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchSingleMovie.pending, state => {
-                state.loading = true;
+                state.loading.fetchSingleMovie = true;
                 state.error = null;
             })
             .addCase(fetchSingleMovie.fulfilled, (state, action) => {
-                state.loading = false;
+                state.loading.fetchSingleMovie = false;
                 state.selectedMovie = action.payload;
             })
             .addCase(fetchSingleMovie.rejected, (state, action) => {
-                state.loading = false;
+                state.loading.fetchSingleMovie = false;
+                state.error = action.payload ?? "Error";
+            })
+            .addCase(fetchShows.pending, state => {
+                state.loading.fetchShows = true;
+                state.error = null;
+            })
+            .addCase(fetchShows.fulfilled, (state) => {
+                state.loading.fetchShows = false;
+            })
+            .addCase(fetchShows.rejected, (state, action) => {
+                state.loading.fetchShows = false;
                 state.error = action.payload ?? "Error";
             });
+
     },
 });
 

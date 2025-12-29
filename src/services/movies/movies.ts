@@ -17,4 +17,14 @@ export const getSingleShow = async (query: string) => {
     return response.data;
 };
 
+export const getShows = async (query: string) => {
+    const response = await api.get("/search/shows", {
+        params: {
+            q: query
+        }
+    });
+
+    return response.data
+}
+
 export default api;
