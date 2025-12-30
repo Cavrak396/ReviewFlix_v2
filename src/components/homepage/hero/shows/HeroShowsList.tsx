@@ -1,6 +1,6 @@
 import ShowCard from "../../../reusable/showCard/ShowCard";
 import type { ScoredShowProps } from "../types/heroTypes";
-import { useBreakpoint } from "../../../customHook/useIsTablet";
+import { useBreakpoint } from "../../../customHook/useBreakpoint.tsx";
 
 function HeroShowsList({ movies }: ScoredShowProps) {
   const width = useBreakpoint();
