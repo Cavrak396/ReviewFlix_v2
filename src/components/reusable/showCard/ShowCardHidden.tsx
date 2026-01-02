@@ -1,5 +1,5 @@
 import ShowCardHiddenText from "./ShowCardHiddenText";
-import type { ShowCardBaseProps } from "./types/showTypes";
+import type { ShowCardBaseProps } from "./types/showCardTypes";
 
 function ShowCardHidden({ className }: ShowCardBaseProps) {
   return (
