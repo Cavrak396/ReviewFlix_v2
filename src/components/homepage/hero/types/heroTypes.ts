@@ -32,6 +32,7 @@ export interface ScoredShow {
         original: string;
     }
 }
+
 export interface ScoredShowProps {
     movies: ScoredShow[];
 }

@@ -1,5 +1,5 @@
 import magnifier from "../../../assets/images/hero/search.svg";
-import type { ShowCardBaseProps } from "./types/showTypes";
+import type { ShowCardBaseProps } from "./types/showCardTypes";
 
 function ShowCardHiddenText({ className }: ShowCardBaseProps) {
   return (

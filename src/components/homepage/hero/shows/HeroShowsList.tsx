@@ -1,24 +1,11 @@
-import ShowCard from "../../../reusable/showCard/ShowCard";
 import type { ScoredShowProps } from "../types/heroTypes";
-import { useBreakpoint } from "../../../customHook/useBreakpoint.tsx";
+import ShowCardList from "../../../reusable/showCard/ShowCardList.tsx";
+import useVisibleMovies from "../../../customHook/useVisibleMovies.tsx";
 
 function HeroShowsList({ movies }: ScoredShowProps) {
-  const width = useBreakpoint();
-  let visibleMovies = movies;
+  const visibleMovies = useVisibleMovies(movies);
 
-  if (width < 768) {
-    visibleMovies = movies.slice(0, 4);
-  } else if (width <= 975) {
-    visibleMovies = movies.slice(0, 5);
-  }
-
-  return (
-    <ul className="hero__shows-list">
-      {visibleMovies.map((item, index) => (
-        <ShowCard key={index} show={item} className="hero" />
-      ))}
-    </ul>
-  );
+  return <ShowCardList movies={visibleMovies} className="hero" />;
 }
 
 export default HeroShowsList;

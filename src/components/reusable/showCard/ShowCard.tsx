@@ -1,4 +1,4 @@
-import type { ShowTypes } from "./types/showTypes";
+import type { ShowTypes } from "./types/showCardTypes";
 import ShowCardHidden from "./ShowCardHidden";
 import "./style/showCard.css";
 
