@@ -1,0 +1,40 @@
+.recommended {
+  padding: 20px 0;
+}
+
+.recommended__shows-list {
+  display: flex;
+  align-items: center;
+  margin: 0 -10px;
+}
+
+.recommended__shows-card {
+  margin: 0 10px;
+  max-width: calc(10% - 20px);
+  flex: 1 1 calc(10% - 20px);
+  min-height: 200px;
+}
+
+@media screen and (max-width: 975px) {
+  .recommended__shows-card {
+    max-width: calc(20% - 20px);
+    flex: 1 1 calc(20% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .recommended {
+    padding: 11px 0;
+  }
+
+  .recommended__shows-list {
+    margin: 0 -15px;
+  }
+
+  .recommended__shows-card {
+    margin: 0 5px;
+    max-width: calc(25% - 10px);
+    flex: 1 1 calc(25% - 10px);
+    min-height: 130px;
+  }
+}
