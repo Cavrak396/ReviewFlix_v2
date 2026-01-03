@@ -153,6 +153,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .hero {
+    padding: 85px 0 20px 0;
+  }
+  
   .hero__introduction {
     margin-bottom: 27px;
   }

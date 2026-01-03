@@ -3,11 +3,11 @@ import HeroShowsList from "./HeroShowsList";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../../../redux/store";
 import { fetchShows } from "../../../../redux/movies/moviesSlice";
-import type { ScoredShow } from "../types/heroTypes";
+import type { BaseMediaShow } from "../../../../types/base";
 
 function HeroShows() {
   const dispatch = useDispatch<AppDispatch>();
-  const [defaultMovies, setDefaultMovies] = useState<ScoredShow[]>([]);
+  const [defaultMovies, setDefaultMovies] = useState<BaseMediaShow[]>([]);
 
   useEffect(() => {
     dispatch(fetchShows("fantasy"))
