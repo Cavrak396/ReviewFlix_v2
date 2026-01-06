@@ -11,9 +11,13 @@ export interface Movie {
 
 export interface MoviesState {
     selectedMovie: Movie | null;
+    seasons: Movie[];
+    episodes: Movie[];
     loading: {
         fetchSingleMovie: boolean;
         fetchShows: boolean;
+        fetchSeasons: boolean;
+        fetchEpisodes: boolean
 
     };
     error: string | null;
