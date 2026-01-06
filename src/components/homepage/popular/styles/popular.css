@@ -1,0 +1,130 @@
+.popular {
+  padding: 20px 0;
+}
+
+.popular__row {
+  margin: 0 -5px;
+}
+
+.popular__row,
+.popular__episodes-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popular__episodes,
+.popular__banner {
+  margin: 5px;
+  max-width: calc(50% - 10px);
+  flex: 1 1 calc(50% - 10px);
+}
+
+.popular__banner,
+.popular__episodes-episode {
+  background-size: cover;
+  background-position: top;
+  border-radius: 20px;
+}
+
+.popular__banner {
+  min-height: 630px;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.popular__episodes-list {
+  margin: 0 -5px;
+}
+
+.popular__episodes-episode {
+  position: relative;
+  margin: 0 5px 10px 5px;
+  max-width: calc(33.33% - 10px);
+  flex: 1 1 calc(33.33% - 10px);
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.popular__episodes-episode::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(100, 100, 100, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popular__episodes-episode:hover::after {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: normal all 0.3s;
+}
+
+.popular__episodes-text {
+  position: absolute;
+  bottom: 3px;
+  right: 6px;
+  transform: translate(-6px, -3px);
+  color: rgba(255, 255, 255, 1);
+  z-index: 15;
+}
+
+.popular__episodes-name,
+.popular__episodes-number {
+  display: block;
+  text-align: right;
+}
+
+.popular__episodes-name {
+  margin-bottom: 2px;
+}
+
+.popular__episodes-number {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 975px) {
+  .popular__row {
+    flex-direction: column;
+  }
+
+  .popular__episodes,
+  .popular__banner {
+    margin: 5px;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .popular__banner {
+    min-height: 570px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .popular {
+    padding: 5px 0;
+  }
+
+  .popular__banner {
+    min-height: 285px;
+  }
+
+  .popular__episodes-list {
+    margin: 0 -3px;
+  }
+
+  .popular__episodes-episode {
+    margin: 0 3px 6px 3px;
+    max-width: calc(33.33% - 6px);
+    flex: 1 1 calc(33.33% - 6px);
+    min-height: 95px;
+  }
+
+  .popular__episodes-name {
+    font-size: 11px;
+  }
+
+  .popular__episodes-number {
+    font-size: 8px;
+  }
+}

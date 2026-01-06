@@ -9,6 +9,7 @@ function Hero() {
   const loading = useSelector(
     (state: RootState) => state.movies.loading.fetchShows
   );
+
   return (
     <section className="hero">
       {loading && <PageLoadingSpinner className="hero" />}
