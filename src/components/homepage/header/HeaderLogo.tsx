@@ -1,9 +1,9 @@
-import Logo from "../../../assets/images/header/logo.png";
+import Logo from "../../reusable/logo/Logo";
 
 function HeaderLogo() {
   return (
     <div className="header__logo">
-      <img src={Logo} className="header__logo-img" alt="application logo" />
+      <Logo className="header__logo-img" alt="header logo" />
     </div>
   );
 }
