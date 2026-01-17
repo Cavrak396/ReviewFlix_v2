@@ -6,7 +6,7 @@ function PopularEpisodesText({ episode }: PopularMovieEpisode) {
 
   const displayName =
     width < 768 && episode.name.length > 10
-      ? episode.name.slice(0, 16) + "…"
+      ? episode.name.slice(0, 10) + "…"
       : episode.name;
 
   return (
